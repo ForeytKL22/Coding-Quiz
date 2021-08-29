@@ -139,9 +139,9 @@ function timer() {
 function endGame() {
     clearInterval(quizTimer);
 
-    localStorage.setItem("score", timeLeft.toString());
-    var localScore = localStorage.getItem("score");
-    userScore.innerHTML = localScore;
+    // localStorage.setItem("score", timeLeft.toString());
+    // var localScore = localStorage.getItem("score");
+    // userScore.innerHTML = localScore;
 
     questionPage.style.display = "none";
     highScorePage.style.display = "none";
@@ -175,4 +175,3 @@ highScoreButton.addEventListener("click", function(){
 });
 
 startQuiz.addEventListener("click", generateQuiz);
-

@@ -1,5 +1,98 @@
-/* .answerbutton {
-    width: 90px;
-    height: 30px;
-    margin: 10px 20px;
-} */
+body {
+    background-image: url("https://i.imgur.com/mtx0F5V.png");
+}
+
+button {
+    background-color: rgb(218, 127, 218);
+}
+
+#high-score {
+    margin: 20px 0 30px 20px;
+    border-radius: 7px;
+    font-size: 20px;
+    padding: 7px 25px;
+}
+
+#high-score:hover {
+    opacity: .7;
+    font-weight: bold;
+}
+
+/* home page styles */
+
+#start-quiz {
+    text-align: center;
+    margin-top: 230px;
+}
+
+#start-quiz h1 {
+    font-size: 50px;
+    text-decoration: underline;
+}
+
+#start-quiz p {
+    font-size: 30px;
+    width: 40%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#start-btn {
+    margin: 0 10px;
+    border-radius: 7px;
+    font-size: 20px;
+    padding: 7px 25px;
+}
+
+#start-btn:hover {
+    opacity: .7;
+    font-weight: bold;
+}
+
+/* question page styles */
+
+#question-page {
+    text-align: center;
+}
+
+#question-title {
+    font-size: 30px;
+    width: 40%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+#question-page button {
+    margin: 0 10px;
+    border-radius: 7px;
+    font-size: 20px;
+    padding: 7px 25px;
+}
+
+#question-page button:hover {
+    opacity: .7;
+    font-weight: bold;
+}
+
+#question-page .question-buttons {
+    margin: auto;
+}
+
+#right-or-wrong {
+    margin-top: 20px;
+    font-size: 20px;
+    font-style: italic;
+}
+
+/* end game page/submit score */
+
+#enter-name button {
+    margin: 20px 10px;
+    border-radius: 7px;
+    font-size: 20px;
+    padding: 7px 25px;
+}
+
+#user-initials {
+    border-radius: 7px;
+}
