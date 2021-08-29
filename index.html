@@ -5,12 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz</title>
+
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 </head>
 <body>
-    
+
+    <p id="quiz-timer"></p>
+
+    <div>
+        <button id="high-score">High Scores</button>
+    </div>
+
+    <div id="start-quiz">
+        <h1>
+            Coding Quiz
+        </h1>
+        <p>
+            Try to answer the following code-related questions within the time limit.
+            Keep in mind that incorrect answers will penalize your score/time by ten seconds!
+        </p>
+        <button id="start-btn">Start Quiz</button>
+    </div>
+
+    <div id="question-page">
+
+        <p id="question-title">Question title</p>
+
+        <button id="button-a" value="A" class="answerbutton"></button>
+        <button id="button-b" value="B" class="answerbutton"></button>
+        <button id="button-c" value="C" class="answerbutton"></button>
+        <button id="button-d" value="D" class="answerbutton"></button>
+
+        <p id="right-or-wrong"></p>
+
+    </div>
+
+    <div id="enter-name">
+        <form>
+            Enter initials:
+            <input id="user-initials" placeholder="initials"></input>
+        </form>
+        <button>Submit</button>
+
+    </div>
+    <div id="high-score-page">
+        <ol>
+            <li id="user-score">test #1</li>
+            <li>test #2</li>
+            <li>test #3</li>
+        </ol>
+
+    </div>
 
 
 
+
+
+    </main>
     <script src="./assets/script.js"></script>
 </body>
 </html>
