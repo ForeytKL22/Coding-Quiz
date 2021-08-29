@@ -50,10 +50,10 @@ var questions = [
 
 ]
 
+//variables
 var startQuiz = document.querySelector("#start-btn");
 var timeLeft = 50;
 var randomQuestion = "";
-
 var questionEl = document.getElementById("question-title");
 var buttonA = document.getElementById("button-a");
 var buttonB = document.getElementById("button-b");
@@ -69,9 +69,11 @@ var highScoreButton = document.getElementById("high-score");
 var userScore = document.getElementById("user-score");
 var playerName = document.getElementById("enter-name");
 
+// var submitScore = document.getElementById("submit-score");
+// var userInitials = document.getElementById("user-initials");
 
+// generates the questions after pressing start
 function generateQuestion() {
-    // for (currentQuestion = 0; currentQuestion < questions.length;) 
     
     highScorePage.style.display = "none";
     if (currentQuestion <=4) {
@@ -88,14 +90,14 @@ function generateQuestion() {
         buttonC.addEventListener("click", checkAnswer);
         buttonD.addEventListener("click", checkAnswer);
 
-        // return randomQuestion;
+    
     }   else {
         endGame();
     }
 };
    
 
-
+// checks to see if answer is right
 function checkAnswer(e) {
     if (e.target.value !== questions[currentQuestion].correctAnswer) {
         timeLeft -= 10;
@@ -119,7 +121,7 @@ function checkAnswer(e) {
 
 };
 
-// var quizTimer;
+// timer
 var quizTimer;
 var clock = document.getElementById("quiz-timer");
 
@@ -139,14 +141,27 @@ function timer() {
 function endGame() {
     clearInterval(quizTimer);
 
-    // localStorage.setItem("score", timeLeft.toString());
-    // var localScore = localStorage.getItem("score");
-    // userScore.innerHTML = localScore;
+    localStorage.setItem("score", timeLeft.toString());
+    var localScore = localStorage.getItem("score");
+    userScore.innerHTML = localScore;
 
     questionPage.style.display = "none";
     highScorePage.style.display = "none";
     enterInitials.style.display = "unset";
 };
+
+
+// submitScore.addEventListener("click", function highscore() {
+//     if (submitScore.value === "" ) {
+//         alert("You need to enter at least one character");
+//     } else {
+//         alert("You entere your initials");
+//     }
+
+// };
+
+
+
 
 
 
