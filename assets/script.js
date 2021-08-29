@@ -69,8 +69,10 @@ var highScoreButton = document.getElementById("high-score");
 var userScore = document.getElementById("user-score");
 var playerName = document.getElementById("enter-name");
 
-// var submitScore = document.getElementById("submit-score");
-// var userInitials = document.getElementById("user-initials");
+var submitScore = document.getElementById("submit-score");
+var userInitials = document.getElementById("user-initials");
+var playerName = "";
+var localScore = "";
 
 // generates the questions after pressing start
 function generateQuestion() {
@@ -118,7 +120,6 @@ function checkAnswer(e) {
     } else {
         endGame();
     }
-
 };
 
 // timer
@@ -133,33 +134,38 @@ function timer() {
         if (timeLeft === 0) {
             clearInterval(quizTimer);
             endGame();
-        }
-
+        } 
 };
+
+
+function nameFunction() {
+    localStorage.setItem("name", playerName);
+    var localName = localStorage.getItem("name");
+    userInitials.innerHTML = localName;
+};
+
 
 
 function endGame() {
     clearInterval(quizTimer);
 
     localStorage.setItem("score", timeLeft.toString());
-    var localScore = localStorage.getItem("score");
-    userScore.innerHTML = localScore;
 
     questionPage.style.display = "none";
     highScorePage.style.display = "none";
     enterInitials.style.display = "unset";
+    nameFunction();
+    generateHighScore();
 };
 
 
-// submitScore.addEventListener("click", function highscore() {
-//     if (submitScore.value === "" ) {
-//         alert("You need to enter at least one character");
-//     } else {
-//         alert("You entere your initials");
-//     }
+function generateHighScore() {
+   
+    localScore = localStorage.getItem("score");
+    userScore.innerHTML = localScore;
 
-// };
-
+    
+}
 
 
 
@@ -187,6 +193,7 @@ highScoreButton.addEventListener("click", function(){
     quizHomePage.style.display = "none";
     questionPage.style.display = "none";
     highScorePage.style.display = "unset";
+    generateHighScore();
 });
 
 startQuiz.addEventListener("click", generateQuiz);
